@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 500,
+    "data": {
+      "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json",
+      "format": {
+        "type": "topojson",
+        "feature": "countries1"
+      }
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape",
+          "fill": "#e0e0e0",
+          "stroke": "white"
+        },
+        "encoding": {
+          "color": {
+            "field": "id",
+            "type": "quantitative",
+            "legend": null
+          }
+        }
+      },
+      {
+        "data": {
+          "url": "Cleaned_Meteorite_Landings.csv"
+        },
+        "mark": "circle",
+        "encoding": {
+          "longitude": {
+            "field": "reclong",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "reclat",
+            "type": "quantitative"
+          },
+          "size": {
+            "field": "mass (g)",
+            "type": "quantitative",
+            "title": "Mass (g)"
+          },
+          "color": {
+            "field": "mass (g)",
+            "type": "quantitative",
+            "scale": {
+              "scheme": "reds"
+            },
+            "title": "Mass (g)"
+          },
+          "tooltip": [
+            {"field": "name", "type": "nominal", "title": "Name"},
+            {"field": "mass (g)", "type": "quantitative", "title": "Mass (g)"},
+            {"field": "recclass", "type": "nominal", "title": "Class"},
+            {"field": "year", "type": "temporal", "title": "Year Found"}
+          ]
+        }
+      }
+    ],
+    "projection": {
+      "type": "naturalEarth1"
+    }
+  }
+  
