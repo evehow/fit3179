@@ -1,47 +1,30 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
-    "height": 500,
-    "data": {
-      "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json",
-      "format": {
-        "type": "topojson",
-        "feature": "countries1"
-      }
-    },
+    "height": 450,
+    "title": "Meteorite Landings",
+    "projection": {"type": "equalEarth"},
     "layer": [
       {
-        "mark": {
-          "type": "geoshape",
-          "fill": "#e0e0e0",
-          "stroke": "white"
+        "data": {
+          "url": "https://github.com/evehow/fit3179/blob/083c9aad9fc2144739fb2f7e5424aec91f14a7c0/ne_110m_admin_0_countries.topojson",
+          "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
         },
-        "encoding": {
-          "color": {
-            "field": "id",
-            "type": "quantitative",
-            "legend": null
-          }
-        }
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
       },
       {
         "data": {
           "url": "https://github.com/evehow/fit3179/blob/ed0965c3a99241c067c6a7016dc05a626b5bb17d/meteorite_landings.csv"
         },
-        "mark": "circle",
+        "mark": {"type": "circle", "tooltip": {"content": "data"}},
         "encoding": {
-          "longitude": {
-            "field": "reclong",
-            "type": "quantitative"
-          },
-          "latitude": {
-            "field": "reclat",
-            "type": "quantitative"
-          },
+          "longitude": {"field": "reclong", "type": "quantitative"},
+          "latitude": {"field": "reclat", "type": "quantitative"},
           "size": {
             "field": "mass (g)",
             "type": "quantitative",
-            "title": "Mass (g)"
+            "title": "Mass (g)",
+            "scale": {"domain": [4, 8]}
           },
           "color": {
             "field": "mass (g)",
@@ -50,18 +33,8 @@
               "scheme": "reds"
             },
             "title": "Mass (g)"
-          },
-          "tooltip": [
-            {"field": "name", "type": "nominal", "title": "Name"},
-            {"field": "mass (g)", "type": "quantitative", "title": "Mass (g)"},
-            {"field": "recclass", "type": "nominal", "title": "Class"},
-            {"field": "year", "type": "temporal", "title": "Year Found"}
-          ]
+          }
         }
       }
-    ],
-    "projection": {
-      "type": "naturalEarth1"
-    }
+    ]
   }
-  
