@@ -1,0 +1,96 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+    "title": "Size vs. Year of Meteorite Landings",
+    "params": [
+      {
+        "name": "massFilter",
+        "value": 450000,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 3000000,
+          "step": 10000,
+          "name": "Select Minimum Mass:"
+        }
+      }
+    ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/evehow/fit3179/main/meteorite_landings.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "filter": "datum['mass (g)'] >= massFilter"
+      }
+    ],
+    "layer": [
+      {
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year of Meteorite Landing",
+            "scale": {
+              "domain": [1998, 2015]
+            },
+            "axis": {
+              "format": "" 
+            }
+          },
+          "y": {
+            "field": "mass (g)",
+            "type": "quantitative",
+            "title": "Mass (g)"
+          },
+          "tooltip": [
+            {"field": "name", "type": "nominal", "title": "Meteorite Name"},
+            {"field": "mass (g)", "type": "quantitative", "title": "Mass (g)"},
+            {"field": "recclass", "type": "nominal", "title": "Class"},
+            {"field": "year", "type": "quantitative", "title": "Year Found"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "transform": [
+          {
+            "filter": "datum['mass (g)'] > 450000"
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [1998, 2015]
+            },
+            "axis": {
+              "format": "" 
+            }
+          },
+          "y": {
+            "field": "mass (g)",
+            "type": "quantitative"
+          },
+          "text": {
+            "field": "name",
+            "type": "nominal"
+          },
+          "color": {
+            "value": "black"
+          }
+        }
+      }
+    ]
+  }
+  
