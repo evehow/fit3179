@@ -12,12 +12,29 @@
       {"recclass": "H4", "count": 895}
     ]
   },
-  "mark": {"type": "arc", "innerRadius": 70, "tooltip": true},
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "recclass", "type": "nominal"}
+      }
+    }
+  ],
   "encoding": {
     "theta": {
       "field": "count",
       "type": "quantitative",
+      "stack": true,
       "title": "Number of Meteorites"
+    },
+    "radius": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 20},
+      "title": "Count Radius"
     },
     "color": {
       "field": "recclass",
