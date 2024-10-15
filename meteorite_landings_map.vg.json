@@ -10,8 +10,8 @@
       "value": 2000,
       "bind": {
         "input": "range",
-        "min": 1990,
-        "max": 2020,
+        "min": 2000,
+        "max": 2013,
         "step": 1,
         "name": "Select the year:"
       }
@@ -38,7 +38,7 @@
         "url": "https://raw.githubusercontent.com/evehow/fit3179/main/meteorite_landings.csv",
         "format": {"type": "csv"}
       },
-      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "mark": {"type": "circle"},
       "encoding": {
         "longitude": {"field": "reclong", "type": "quantitative"},
         "latitude": {"field": "reclat", "type": "quantitative"},
@@ -53,11 +53,20 @@
           "type": "quantitative",
           "scale": {"scheme": "reds"},
           "title": "Mass (g)"
-        }
+        },
+        "tooltip": [
+          {"field": "name", "type": "nominal"},
+          {"field": "recclass", "type": "nominal", "title": "classification"},
+          {"field": "mass (g)", "type": "quantitative", "title": "mass (g)"},
+          {"field": "fall", "type": "nominal", "title": "fall type"},
+          {"field": "year", "type": "quantitative", "title": "year"},
+          {"field": "reclat", "type": "quantitative", "title": "latitude"},
+          {"field": "reclong", "type": "quantitative", "title": "longitude"}
+        ]
       },
       "transform": [
         {
-          "filter": "datum.year == year"  
+          "filter": "datum.year == year"
         }
       ]
     },
@@ -81,7 +90,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['mass (g)'] > 450000",  
+            "test": "datum['mass (g)'] > 450000",
             "value": 1
           },
           "value": 0
@@ -89,7 +98,7 @@
       },
       "transform": [
         {
-          "filter": "datum.year == year"  
+          "filter": "datum.year == year"
         }
       ]
     }
