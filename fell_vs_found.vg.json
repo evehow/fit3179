@@ -1,47 +1,100 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 400,
-  "title": "Comparison of Meteorite Landings: Fell vs Found Over the Years",
-  "data": {
-    "url": "https://raw.githubusercontent.com/evehow/fit3179/main/meteorite_landings.csv",
-    "format": {"type": "csv"}
+  "title": {
+    "text": "Comparison of Meteorite Landings: Fell vs Found Over the Years",
+    "anchor": "middle",
+    "align": "center"
   },
-  "transform": [
+  "vconcat": [
     {
-      "filter": {"field": "fall", "oneOf": ["Found", "Fell"]}
+      "width": 800,
+      "height": 400,
+      "mark": "line",
+      "title": "Filtered Data (Fell vs Found)",
+      "data": {
+        "url": "https://raw.githubusercontent.com/evehow/fit3179/main/meteorite_landings.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {
+          "filter": {"field": "fall", "oneOf": ["Found", "Fell"]}
+        },
+        {
+          "calculate": "year(datum.year)",
+          "as": "year"
+        },
+        {
+          "filter": "datum.year != null"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {"title": "Year"},
+          "scale": {"domain": {"param": "time_brush"}}
+        },
+        "y": {
+          "aggregate": "count",
+          "field": "*",
+          "type": "quantitative",
+          "axis": {"title": "Number of Meteorites"}
+        },
+        "color": {
+          "field": "fall",
+          "type": "nominal",
+          "scale": {"range": ["#ff7f0e", "#1f77b4"]},
+          "legend": {"title": "Fall Status"}
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "fall", "type": "nominal", "title": "Fall Status"},
+          {"aggregate": "count", "field": "*", "type": "quantitative", "title": "Number of Meteorites"}
+        ]
+      }
     },
     {
-      "calculate": "year(datum.year)",
-      "as": "year"
-    },
-    {
-      "filter": "datum.year != null"  
+      "width": 800,
+      "height": 100,
+      "title": "Use this chart to filter by year",
+      "mark": "line",
+      "data": {
+        "url": "https://raw.githubusercontent.com/evehow/fit3179/main/meteorite_landings.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {
+          "calculate": "year(datum.year)",
+          "as": "year"
+        },
+        {
+          "filter": "datum.year != null"
+        }
+      ],
+      "params": [
+        {
+          "name": "time_brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "aggregate": "count",
+          "field": "*",
+          "type": "quantitative",
+          "title": "World Meteorite Counts"
+        },
+        "color": {"value": "#1b2631"},
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"aggregate": "count", "field": "*", "type": "quantitative", "title": "Number of Meteorites"}
+        ]
+      }
     }
-  ],
-  "mark": "line",
-  "encoding": {
-    "x": {
-      "field": "year",
-      "type": "ordinal",
-      "axis": {"title": "Year"}
-    },
-    "y": {
-      "aggregate": "count",
-      "field": "*",  
-      "type": "quantitative",
-      "axis": {"title": "Number of Meteorites"}
-    },
-    "color": {
-      "field": "fall",
-      "type": "nominal",
-      "scale": {"range": ["#ff7f0e", "#1f77b4"]},
-      "legend": {"title": "Fall Status"}
-    },
-    "tooltip": [
-      {"field": "year", "type": "ordinal", "title": "Year"},
-      {"field": "fall", "type": "nominal", "title": "Fall Status"},
-      {"aggregate": "count", "field": "*", "type": "quantitative", "title": "Number of Meteorites"}
-    ]
-  }
+  ]
 }
