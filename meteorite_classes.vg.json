@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": "Top 5 Meteorite Classes",
+  "data": {
+    "values": [
+      {"recclass": "L6", "count": 1779},
+      {"recclass": "H5", "count": 1543},
+      {"recclass": "L5", "count": 1339},
+      {"recclass": "H6", "count": 898},
+      {"recclass": "H4", "count": 895}
+    ]
+  },
+  "mark": {"type": "arc", "innerRadius": 70, "tooltip": true},
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Number of Meteorites"
+    },
+    "color": {
+      "field": "recclass",
+      "type": "nominal",
+      "legend": {"title": "Meteorite Class"},
+      "scale": {
+        "domain": ["L6", "H5", "L5", "H6", "H4"],
+        "range": ["#ff7f0e", "#1f77b4", "#2ca02c", "#d62728", "#9467bd"]
+      }
+    },
+    "tooltip": [
+      {"field": "recclass", "type": "nominal", "title": "Meteorite Class"},
+      {"field": "count", "type": "quantitative", "title": "Number of Meteorites"}
+    ]
+  }
+}
