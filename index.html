@@ -23,7 +23,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.7rem; /* Slightly larger font size */
             color: #45a29e;
             margin-bottom: 20px;
             text-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
@@ -80,6 +80,31 @@
             }
         }
 
+        /* Radial Plot and Description Side by Side */
+        .radial-container {
+            display: flex; /* Use flexbox for side-by-side layout */
+            justify-content: space-between; /* Space between elements */
+            align-items: center; /* Center items vertically */
+            max-width: 80%; /* Limit the width */
+            margin: 0 auto; /* Center container */
+        }
+
+        .radial-chart {
+            width: 50%; /* Set width of the chart */
+            height: 400px; /* Set a specific height */
+        }
+
+        .radial-description {
+            width: 45%; /* Set width of the description */
+            text-align: right; /* Align text to the right */
+        }
+
+        /* Line Chart */
+        #linechart {
+            width: 90%; /* Make the line chart slightly smaller */
+            height: 300px; /* Set a specific height */
+        }
+
         /* Hover Effects */
         .chart-container:hover {
             box-shadow: 0 0 40px rgba(102, 252, 241, 0.8);
@@ -102,28 +127,28 @@
 
         <!-- Proportional Symbol Map Section -->
         <div class="chart-container">
-            <h2>Proportional Symbol Map</h2>
+            <h2>Throughout the years...</h2>
             <div id="proportional_symbol_map"></div>
         </div>
 
         <!-- Scatterplot Section -->
         <div class="chart-container">
-            <h2>Scatterplot</h2>
             <div id="scatterplot"></div>
         </div>
 
         <!-- Radial Plot Section -->
-        <div class="chart-container">
-            <h2>Radial Plot</h2>
-            <div id="radialplot"></div>
-            <p>
-                The largest segment is for L6 meteorites, which are known for their rich olivine content and make up a significant portion of the samples. Following that, H5 meteorites, which are high in metallic iron, have a notable presence. The green L5 segment represents another common type, characterized by a mix of silicate minerals. H6 meteorites, shown in red, are similar to H5 but contain slightly different mineral compositions. Lastly, the small purple segment indicates H4 meteorites, which are less common and feature a distinct structure.
-            </p>
+        <div class="chart-container radial-container">
+            <div class="radial-chart" id="radialplot"></div>
+            <div class="radial-description">
+                <h2>Meteorite Classes</h2>
+                <p>
+                    The largest segment is for L6 meteorites, which are known for their rich olivine content and make up a significant portion of the samples. Following that, H5 meteorites, which are high in metallic iron, have a notable presence. The green L5 segment represents another common type, characterized by a mix of silicate minerals. H6 meteorites, shown in red, are similar to H5 but contain slightly different mineral compositions. Lastly, the small purple segment indicates H4 meteorites, which are less common and feature a distinct structure.
+                </p>
+            </div>
         </div>
 
         <!-- Line Chart Section -->
         <div class="chart-container">
-            <h2>Line Chart</h2>
             <div id="linechart"></div>
             <p>
                 The blue line representing found meteorites exhibits significant fluctuations, peaking sharply in 2002 and 2006 with over 1,600 and 1,200 meteorites, respectively. However, there are notable declines in the years following, especially in 2005 and 2007, where counts drop below 200, and by 2012, the number approaches zero. In contrast, the red line for fallen meteorites remains nearly flat, suggesting that such meteorites are much rarer or less documented, with only minimal increases observed in 2008 and 2012.
