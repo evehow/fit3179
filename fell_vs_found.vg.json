@@ -3,14 +3,22 @@
   "title": {
     "text": "Comparison of Meteorite Landings: Fell vs Found Over the Years",
     "anchor": "middle",
-    "align": "center"
+    "align": "center",
+    "color": "#45a29e",  
+    "fontSize": 24,
+    "fontWeight": "bold"
   },
   "vconcat": [
     {
       "width": 800,
       "height": 400,
       "mark": "line",
-      "title": "Filtered Data (Fell vs Found)",
+      "title": {
+        "text": "Filtered Data (Fell vs Found)",
+        "color": "#45a29e", 
+        "fontSize": 20,
+        "fontWeight": "bold"
+      },
       "data": {
         "url": "https://raw.githubusercontent.com/evehow/fit3179/main/meteorite_landings.csv",
         "format": {"type": "csv"}
@@ -31,20 +39,32 @@
         "x": {
           "field": "year",
           "type": "ordinal",
-          "axis": {"title": "Year"},
+          "axis": {
+            "title": "Year",
+            "labelColor": "#c5c6c7",  
+            "grid": false  
+          },
           "scale": {"domain": {"param": "time_brush"}}
         },
         "y": {
           "aggregate": "count",
           "field": "*",
           "type": "quantitative",
-          "axis": {"title": "Number of Meteorites"}
+          "axis": {
+            "title": "Number of Meteorites",
+            "labelColor": "#c5c6c7",  
+            "grid": false  
+          }
         },
         "color": {
           "field": "fall",
           "type": "nominal",
-          "scale": {"range": ["#ff7f0e", "#1f77b4"]},
-          "legend": {"title": "Fall Status"}
+          "scale": {"range": ["#05f2f2", "#1f77b4"]}, 
+          "legend": {
+            "title": "Fall Status",
+            "labelColor": "#c5c6c7",
+            "titleColor": "#c5c6c7" 
+          }
         },
         "tooltip": [
           {"field": "year", "type": "ordinal", "title": "Year"},
@@ -56,7 +76,12 @@
     {
       "width": 800,
       "height": 100,
-      "title": "Use this chart to filter by year",
+      "title": {
+        "text": "Use this chart to filter by year",
+        "color": "#45a29e", 
+        "fontSize": 16,
+        "fontWeight": "bold"
+      },
       "mark": "line",
       "data": {
         "url": "https://raw.githubusercontent.com/evehow/fit3179/main/meteorite_landings.csv",
@@ -75,26 +100,36 @@
         {
           "name": "time_brush",
           "select": {"type": "interval", "encodings": ["x"]}
+          
         }
       ],
       "encoding": {
         "x": {
           "field": "year",
           "type": "ordinal",
-          "axis": {"title": "Year"}
+          "axis": {
+            "title": "Year",
+            "labelColor": "#c5c6c7",  
+            "grid": false  
+          }
         },
         "y": {
           "aggregate": "count",
           "field": "*",
           "type": "quantitative",
-          "title": "World Meteorite Counts"
+          "title": "World Meteorite Counts",
+          "axis": {
+            "labelColor": "#c5c6c7",  
+            "grid": false  
+          }
         },
-        "color": {"value": "#1b2631"},
+        "color": {"value": "#1b2631"},  
         "tooltip": [
           {"field": "year", "type": "ordinal", "title": "Year"},
           {"aggregate": "count", "field": "*", "type": "quantitative", "title": "Number of Meteorites"}
         ]
       }
     }
-  ]
+  ],
+  "background": "#0b0c10" 
 }
