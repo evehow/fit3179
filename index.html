@@ -104,17 +104,36 @@
             box-shadow: 0 0 40px rgba(102, 252, 241, 0.8);
             transition: box-shadow 0.3s ease-in-out;
         }
+
+        /* Footer Styling */
+        footer {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.75rem; /* Small font size */
+            color: #c5c6c7;
+            text-align: left;
+        }
+
+        footer a {
+            color: #66fcf1;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
 
     <!-- Main Title -->
-    <h1>Meteorite Landings</h1>
+    <h1>METEORITE LANDINGS</h1>
 
     <!-- Introduction -->
     <p>
-        Meteorites, fragments of space rocks that survive their journey through Earth's atmosphere, provide valuable insights into the universe. By analyzing where they land, how many are found over time, and their composition, we can track patterns and understand their origins. This data helps scientists explore the solar system's history and the conditions that led to planet formation. The visualizations presented here focus on key aspects like the locations of meteorite landings, changes in discovery rates over time, and the different types of meteorites found on Earth.
+        Meteorites, fragments of space rocks that survive their journey through Earth's atmosphere, provide valuable insights into the universe. By analyzing where they land, how many are found over time, and their composition, we can track patterns and understand their origins. 
     </p>
 
     <div class="container">
@@ -157,6 +176,13 @@
             </p>
         </div>
 
+    </div>
+
+    <!-- Information Container at the Bottom -->
+    <div style="background-color: #0b0c10; padding: 10px; color: #c5c6c7; max-width: 60%; margin: 20px auto; text-align: center; font-size: 0.1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(102, 252, 241, 0.5);">
+        <p>Created By: Eve How (32839200)</p>
+        <p>Updated By: 16/10/2024</p>
+        <p>Dataset Sources: <a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh/about_data" target="_blank" style="color: #66fcf1;">NASA's Open Data Portal</a></p>
     </div>
 
 </body>
