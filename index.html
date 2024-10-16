@@ -19,6 +19,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         h1 {
@@ -53,16 +54,18 @@
 
         /* Layout Grid */
         .container {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column; /* Ensure vertical scrolling */
             gap: 30px;
             padding: 40px;
+            width: 100%;
         }
 
         /* Responsive Design */
         @media (min-width: 768px) {
             .container {
-                grid-template-columns: 1fr 1fr;
+                width: 90%;
+                margin: 0 auto; /* Center container on larger screens */
             }
         }
 
