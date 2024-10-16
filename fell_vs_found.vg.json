@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Comparison of Meteorite Landings: Fell vs Found Over the Years",
+    "text": "Comparison of Meteorite Landings: Fell versus Found Over the Years",
     "anchor": "middle",
     "align": "center",
     "color": "#45a29e",  
@@ -14,7 +14,7 @@
       "height": 400,
       "mark": "line",
       "title": {
-        "text": "Filtered Data (Fell vs Found)",
+        "text": "Filtered Data (Fell versus Found)",
         "color": "#45a29e", 
         "fontSize": 20,
         "fontWeight": "bold"

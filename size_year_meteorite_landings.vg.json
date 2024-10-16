@@ -3,7 +3,7 @@
   "width": 800,
   "height": 400,
   "title": {
-    "text": "Size vs. Year of Meteorite Landings",
+    "text": "Size versus Year of Meteorite Landings",
     "color": "#45a29e", 
     "fontSize": 24,
     "fontWeight": "bold"
