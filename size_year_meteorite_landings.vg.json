@@ -11,7 +11,7 @@
   "params": [
     {
       "name": "massFilter",
-      "value": 450000,
+      "value": 0,
       "bind": {
         "input": "range",
         "min": 0,
