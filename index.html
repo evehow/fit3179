@@ -23,9 +23,17 @@
         }
 
         h1 {
+            font-size: 2.5rem;
+            color: #45a29e;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
+        }
+
+        h2 {
             font-size: 2rem;
             color: #45a29e;
             margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
         }
 
         p {
@@ -36,7 +44,7 @@
         }
 
         /* Glowing Effect */
-        h1, p, div {
+        h1, h2, p, div {
             text-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
         }
 
@@ -79,6 +87,9 @@
 
 <body>
 
+    <!-- Main Title -->
+    <h1>Meteorite Landings</h1>
+
     <!-- Introduction -->
     <p>
         Meteorites, fragments of space rocks that survive their journey through Earth's atmosphere, provide valuable insights into the universe. By analyzing where they land, how many are found over time, and their composition, we can track patterns and understand their origins. This data helps scientists explore the solar system's history and the conditions that led to planet formation. The visualizations presented here focus on key aspects like the locations of meteorite landings, changes in discovery rates over time, and the different types of meteorites found on Earth.
@@ -88,19 +99,19 @@
 
         <!-- Proportional Symbol Map Section -->
         <div>
-            <h1>Proportional Symbol Map</h1>
+            <h2>Proportional Symbol Map</h2>
             <div id="proportional_symbol_map"></div>
         </div>
 
         <!-- Scatterplot Section -->
         <div>
-            <h1>Scatterplot</h1>
+            <h2>Scatterplot</h2>
             <div id="scatterplot"></div>
         </div>
 
         <!-- Radial Plot Section -->
         <div>
-            <h1>Radial Plot</h1>
+            <h2>Radial Plot</h2>
             <div id="radialplot"></div>
             <p>
                 The largest segment is for L6 meteorites, which are known for their rich olivine content and make up a significant portion of the samples. Following that, H5 meteorites, which are high in metallic iron, have a notable presence. The green L5 segment represents another common type, characterized by a mix of silicate minerals. H6 meteorites, shown in red, are similar to H5 but contain slightly different mineral compositions. Lastly, the small purple segment indicates H4 meteorites, which are less common and feature a distinct structure.
@@ -109,7 +120,7 @@
 
         <!-- Line Chart Section -->
         <div>
-            <h1>Line Chart</h1>
+            <h2>Line Chart</h2>
             <div id="linechart"></div>
             <p>
                 The blue line representing found meteorites exhibits significant fluctuations, peaking sharply in 2002 and 2006 with over 1,600 and 1,200 meteorites, respectively. However, there are notable declines in the years following, especially in 2005 and 2007, where counts drop below 200, and by 2012, the number approaches zero. In contrast, the orange line for fallen meteorites remains nearly flat, suggesting that such meteorites are much rarer or less documented, with only minimal increases observed in 2008 and 2012.
