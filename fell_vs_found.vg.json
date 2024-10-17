@@ -42,6 +42,7 @@
           "axis": {
             "title": "Year",
             "labelColor": "#c5c6c7",  
+            "titleColor": "#66fcf1", 
             "grid": false  
           },
           "scale": {"domain": {"param": "time_brush"}}
@@ -53,6 +54,7 @@
           "axis": {
             "title": "Number of Meteorites",
             "labelColor": "#c5c6c7",  
+            "titleColor": "#66fcf1", 
             "grid": false  
           }
         },
@@ -109,6 +111,7 @@
           "axis": {
             "title": "Year",
             "labelColor": "#c5c6c7",  
+            "titleColor": "#66fcf1", 
             "grid": false  
           }
         },
@@ -119,6 +122,7 @@
           "title": "World Meteorite Counts",
           "axis": {
             "labelColor": "#c5c6c7",  
+            "titleColor": "#66fcf1",  
             "grid": false  
           }
         },

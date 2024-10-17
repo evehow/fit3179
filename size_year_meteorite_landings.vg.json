@@ -40,13 +40,13 @@
           "type": "quantitative",
           "title": "Year of Meteorite Landing",
           "scale": {"domain": [1998, 2015]},
-          "axis": {"format": "", "labelColor": "#c5c6c7", "titleColor": "#66fcf1"}
+          "axis": {"format": "", "labelColor": "#c5c6c7", "titleColor": "#66fcf1", "grid": false}
         },
         "y": {
           "field": "mass (g)", 
           "type": "quantitative", 
           "title": "Mass (g)",
-          "axis": {"labelColor": "#c5c6c7", "titleColor": "#66fcf1"}
+          "axis": {"labelColor": "#c5c6c7", "titleColor": "#66fcf1", "grid": false}
         },
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Meteorite Name"},
@@ -71,11 +71,11 @@
           "field": "year",
           "type": "quantitative",
           "scale": {"domain": [1998, 2015]},
-          "axis": {"format": ""}
+          "axis": {"format": "", "grid": false}
         },
-        "y": {"field": "mass (g)", "type": "quantitative"},
+        "y": {"field": "mass (g)", "type": "quantitative", "axis": {"grid": false}},
         "text": {"field": "name", "type": "nominal"},
-        "color": {"value": "#c5c6c7"} 
+        "color": {"value": "#c5c6c7"}
       }
     }
   ],
